@@ -1,6 +1,6 @@
 {
-  "name": "nodejs",
-  "version": "0.1.0",
+  "name": "neon-bindgen-test",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "repository": {
@@ -14,7 +14,8 @@
   "author": "freestrings <freestrings@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "neon-cli": "^0.2.0"
+    "neon-cli": "^0.2.0",
+    "node-pre-gyp": "0.6"
   },
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
