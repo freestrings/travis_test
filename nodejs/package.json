@@ -1,0 +1,32 @@
+{
+  "name": "nodejs",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/freestrings/travis_test.git"
+  },
+  "files": [
+    "native/index.node",
+    "lib"
+  ],
+  "author": "freestrings <freestrings@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "neon-cli": "^0.2.0"
+  },
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
+    "package": "node-pre-gyp package",
+    "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish"
+  },
+  "binary": {
+    "module_name": "index",
+    "host": "https://github.com/freestrings/travis_test/releases/download/",
+    "remote_path": "{version}",
+    "package_name": "{node_abi}-{platform}-{arch}.tar.gz",
+    "module_path": "./native",
+    "pkg_path": "."
+  }
+}

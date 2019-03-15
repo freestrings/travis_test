@@ -1,0 +1,30 @@
+language: rust
+sudo: false
+
+cache: cargo
+
+branches:
+  only:
+    - master
+    - /^test-.*$/
+
+matrix:
+  include:
+    - rust: stable
+      env: RUST_BACKTRACE=1
+      script:
+        - cargo build --verbose --all
+    - language: node_js
+      node_js:
+        - 11
+      before_install:
+        - cd nodejs
+        - node -v
+        - npm -v
+        - npm install
+      script:
+        - npm test
+        - npm install node-pre-gyp@amilajack/node-pre-gyp#neon-compat
+        - npm install node-pre-gyp-github
+        - yarn add node-pre-gyp@amilajack/node-pre-gyp#neon-compat
+        - yarn add node-pre-gyp-github
