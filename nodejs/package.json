@@ -3,19 +3,11 @@
   "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/freestrings/travis_test.git"
-  },
-  "files": [
-    "native/index.node",
-    "lib"
-  ],
   "author": "freestrings <freestrings@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "neon-cli": "^0.2.0",
-    "node-pre-gyp": "0.6"
+    "node-pre-gyp": "amilajack/node-pre-gyp#neon-compat"
   },
   "scripts": {
     "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
@@ -23,6 +15,14 @@
     "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
     "test": "mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freestrings/travis_test.git"
+  },
+  "files": [
+    "native/index.node",
+    "lib"
+  ],
   "binary": {
     "module_name": "index",
     "host": "https://github.com/freestrings/travis_test/releases/download/",
