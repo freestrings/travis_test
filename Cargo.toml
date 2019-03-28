@@ -1,6 +1,0 @@
-[package]
-name = "travis_test"
-version = "0.1.0"
-authors = ["freestrings <freestrings@gmail.com>"]
-
-[dependencies]
