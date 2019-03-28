@@ -54,15 +54,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "nodejs"
-version = "0.1.0"
-dependencies = [
- "neon 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "neon-build 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "travis_test 0.1.0",
-]
-
-[[package]]
 name = "regex"
 version = "0.2.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -106,6 +97,10 @@ dependencies = [
 [[package]]
 name = "travis_test"
 version = "0.1.0"
+dependencies = [
+ "neon 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "neon-build 0.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
 
 [[package]]
 name = "ucd-util"

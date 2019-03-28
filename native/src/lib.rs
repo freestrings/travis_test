@@ -1,12 +1,10 @@
 #[macro_use]
 extern crate neon;
-extern crate travis_test;
 
 use neon::prelude::*;
 
 fn hello(mut cx: FunctionContext) -> JsResult<JsString> {
-    let s = travis_test::testa();
-    Ok(cx.string(s.as_str()))
+    Ok(cx.string("hello"))
 }
 
 register_module!(mut cx, {

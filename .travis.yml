@@ -1,8 +1,3 @@
-os:
-  - osx
-  - linux
-  - windows
-
 language: rust
 sudo: false
 
@@ -16,6 +11,7 @@ branches:
 matrix:
   include:
     - language: node_js
+      os: linux
       node_js:
         - 'node'
         - '11'
@@ -29,16 +25,24 @@ matrix:
         - source "$HOME/.cargo/env"
         - node -v
         - npm -v
-        - cd nodejs
-        - npm install node-pre-gyp@amilajack/node-pre-gyp#neon-compat
-        - npm install node-pre-gyp-github
         - npm install
       script:
         - npm test
-        - npm run upload-binary
-# deploy:
-#   provider: npm
-#   email: freestrings@gmail.com
-#   api_key: $NPM_API_KEY
-#   on:
-#     branch: master
+    - language: node_js
+      os: osx
+      node_js:
+        - 'node'
+        - '11'
+        - '10'
+        - '9'
+        - '8'
+      before_install:
+        - curl https://sh.rustup.rs -sSf > /tmp/rustup.sh
+        - sh /tmp/rustup.sh -y
+        - export PATH="$HOME/.cargo/bin:$PATH"
+        - source "$HOME/.cargo/env"
+        - node -v
+        - npm -v
+        - npm install
+      script:
+        - npm test
