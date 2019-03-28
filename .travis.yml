@@ -33,7 +33,7 @@ matrix:
         - npm install
       script:
         - npm test
-        - npm run upload-binary
+        - ln -s ./node_modules/@amilajack/node-pre-gyp/bin/node-pre-gyp &&  -s ./node_modules/node-pre-gyp-github/bin/node-pre-gyp-github.js node-pre-gyp-github && npm run upload-binary
 # deploy:
 #   provider: npm
 #   email: freestrings@gmail.com
