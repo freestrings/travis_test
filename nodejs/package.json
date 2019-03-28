@@ -11,9 +11,9 @@
     "node-pre-gyp-github": "^1.4.3"
   },
   "scripts": {
-    "install": "./node-pre-gyp install --fallback-to-build=false || neon build --release",
-    "package": "./node-pre-gyp package",
-    "upload-binary": "./node-pre-gyp package && ./node-pre-gyp-github publish",
+    "install": "node-pre-gyp install --fallback-to-build=false || neon build --release",
+    "package": "node-pre-gyp package",
+    "upload-binary": "node-pre-gyp package && node-pre-gyp-github publish",
     "test": "mocha"
   },
   "repository": {

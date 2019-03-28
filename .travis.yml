@@ -30,10 +30,12 @@ matrix:
         - node -v
         - npm -v
         - cd nodejs
+        - npm install node-pre-gyp@amilajack/node-pre-gyp#neon-compat
+        - npm install node-pre-gyp-github
         - npm install
       script:
         - npm test
-        - ln -s ./node_modules/@amilajack/node-pre-gyp/bin/node-pre-gyp &&  -s ./node_modules/node-pre-gyp-github/bin/node-pre-gyp-github.js node-pre-gyp-github && npm run upload-binary
+        - npm run upload-binary
 # deploy:
 #   provider: npm
 #   email: freestrings@gmail.com
