@@ -30,14 +30,13 @@ matrix:
         - node -v
         - npm -v
         - cd nodejs
-        - npm i node-pre-gyp
         - npm install
       script:
         - npm test
-        - npm run package
-deploy:
-  provider: npm
-  email: freestrings@gmail.com
-  api_key: $NPM_API_KEY
-  on:
-    branch: master
+        - npm run upload-binary
+# deploy:
+#   provider: npm
+#   email: freestrings@gmail.com
+#   api_key: $NPM_API_KEY
+#   on:
+#     branch: master
