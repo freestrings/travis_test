@@ -17,6 +17,6 @@
     "url": "git+https://github.com/freestrings/travis_test.git"
   },
   "devDependencies": {
-    "mocha": "^6.0.2"
+    "mocha": "^10.2.0"
   }
 }
